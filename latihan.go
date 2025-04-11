@@ -1,20 +1,21 @@
 package main
 import "fmt"
 
-func faktorBil(n int)int{
-	var i, num int
-	num = 0
-	i = 1
-	for i <= n{
-		if n%i == 0{
-			num++
-		}
-		i++
+func hitungRataDigit(a, b *int){
+	var i, hasil int
+	var c float64
+	*b = 0
+	for *a> 0{
+		i = *a%10
+		hasil += i
+		*b++
+		*a = *a/10
 	}
-	return num
+	c = float64(hasil)/float64(*b)
+	fmt.Print(c)
 }
 func main(){
-	var n int
-	fmt.Scan(&n)
-	fmt.Print(faktorBil(n))
+	var a, b int
+	fmt.Scan(&a)
+	hitungRataDigit(&a, &b)
 }
